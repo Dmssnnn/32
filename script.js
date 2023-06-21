@@ -81,7 +81,7 @@
 
 const getUsersData = async () => {
    try {
-    await new Promise((something) => setInterval(something,2000) );
+    await new Promise((something) => setInterval(something,600) );
     const result = await fetch("https://jsonplaceholder.typicode.com/users")
     const getJsn = await result.json()
     getJsn.forEach((getJsn) => {
@@ -104,6 +104,22 @@ const getUsersData = async () => {
         address.classList.add("address")
         address.textContent  =  `ADDRESS:${getJsn.address.street} | | CITY:${getJsn.address.city} | | ZIPCODE: ${getJsn.address.zipcode}`
         div.appendChild(address)
+        const geo = document.createElement("span")
+        geo.classList.add("geo")
+        geo.textContent = `GEO =>  LAT : ${getJsn.address.geo.lat}   || LNG : ${getJsn.address.geo.lng}`
+        div.appendChild(geo)
+        const phoneNumber = document.createElement("span")
+        phoneNumber.classList.add("phone")
+        phoneNumber.textContent = `PHONE NUMBER : ${getJsn.phone}`
+        div.appendChild(phoneNumber)
+        const website = document.createElement("span")
+        website.textContent = `WEBSITE : ${getJsn.website}`
+        website.classList.add("web")
+        div.appendChild(website)
+        const company = document.createElement("span")
+        company.classList.add("company")
+        company.textContent = `COMPANY =>  ${getJsn.company.name} ||${getJsn.company.catchPhrase} || ${getJsn.company.bs}`
+        div.appendChild(company)
         wrap.appendChild(div)
     })
    }

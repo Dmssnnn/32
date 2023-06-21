@@ -35,4 +35,36 @@ body {
 }
 .address {
     color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.phone {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+}
+.geo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: blueviolet;
+}
+.web {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkgreen;
+}
+.company {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkred;
 }
